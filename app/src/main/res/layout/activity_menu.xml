@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_pink"
+    tools:context=".MenuActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/main_menu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Машины"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_menu" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/carsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+<!--                        <androidx.cardview.widget.CardView-->
+<!--                            android:id="@+id/cardView"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="8dp"-->
+<!--                            android:layout_marginTop="8dp"-->
+<!--                            android:layout_marginEnd="8dp"-->
+<!--                            android:visibility="visible"-->
+<!--                            app:cardBackgroundColor="@color/material_dynamic_neutral90"-->
+<!--                            app:cardCornerRadius="16dp"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent">-->
+
+<!--                                <androidx.cardview.widget.CardView-->
+<!--                                    android:id="@+id/cardView3"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="220dp"-->
+<!--                                    android:layout_marginStart="8dp"-->
+<!--                                    android:layout_marginTop="8dp"-->
+<!--                                    android:layout_marginEnd="8dp"-->
+<!--                                    app:cardBackgroundColor="#AB6868"-->
+<!--                                    app:cardCornerRadius="16dp"-->
+<!--                                    app:cardElevation="-16dp"-->
+<!--                                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                                    <ImageView-->
+<!--                                        android:id="@+id/roundedImageView"-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        android:background="@color/white"-->
+<!--                                        android:scaleType="centerCrop"-->
+<!--                                        android:src="@drawable/xiwze_n9qu0" />-->
+<!--                                </androidx.cardview.widget.CardView>-->
+
+<!--                                <TextView-->
+<!--                                    android:id="@+id/title"-->
+<!--                                    style="@style/TextAppearance.MaterialComponents.Headline3"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginStart="24dp"-->
+<!--                                    android:layout_marginTop="8dp"-->
+<!--                                    android:text="I'm a title"-->
+<!--                                    android:textSize="34sp"-->
+<!--                                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                                    app:layout_constraintTop_toBottomOf="@+id/cardView3" />-->
+
+<!--                                <TextView-->
+<!--                                    android:id="@+id/subhead"-->
+<!--                                    style="@style/TextAppearance.MaterialComponents.Subtitle2"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginStart="24dp"-->
+<!--                                    android:layout_marginTop="4dp"-->
+<!--                                    android:layout_marginBottom="16dp"-->
+<!--                                    android:text="I'm a subhead"-->
+<!--                                    android:textSize="24sp"-->
+<!--                                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                                    app:layout_constraintTop_toBottomOf="@id/title" />-->
+
+<!--                                <Button-->
+<!--                                    android:id="@+id/button2"-->
+<!--                                    android:layout_width="56dp"-->
+<!--                                    android:layout_height="56dp"-->
+<!--                                    android:layout_marginTop="24dp"-->
+<!--                                    android:layout_marginEnd="24dp"-->
+<!--                                    android:layout_marginBottom="24dp"-->
+<!--                                    android:background="@drawable/roundedbutton"-->
+<!--                                    android:text="❯"-->
+<!--                                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                    app:layout_constraintTop_toBottomOf="@+id/cardView3" />-->
+
+<!--                            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--                        </androidx.cardview.widget.CardView>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
