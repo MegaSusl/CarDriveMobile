@@ -53,6 +53,8 @@ public class MenuActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = findViewById(R.id.main_menu);
+        toolbar.setTitleTextColor(Color.WHITE);
+
         setSupportActionBar(toolbar);
 
         if(!SharedPrefManager.getInstance(this).isLoggedIn()){
@@ -74,7 +76,9 @@ public class MenuActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         int id = item.getItemId();
         if (id == R.id.Profile){
-            Toast.makeText(this, "aaaaaaaaa", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "aaaaaaaaa", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, ProfileActivity.class);
+            this.startActivity(intent);
         }
         if (id == R.id.addCarBtn){
             Intent intent = new Intent(MenuActivity.this, addCarActivity.class);
@@ -235,6 +239,7 @@ public class MenuActivity extends AppCompatActivity {
         Button button = new Button(this);
         button.setId(View.generateViewId());
         button.setText("❯");
+        button.setTextColor(Color.WHITE);
         button.setBackground(ContextCompat.getDrawable(this, R.drawable.roundedbutton)); // Ваш ресурс
 
         ConstraintLayout.LayoutParams buttonParams = new ConstraintLayout.LayoutParams(180, 180);

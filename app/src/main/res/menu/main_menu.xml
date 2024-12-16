@@ -3,15 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Профиль"
-        android:id="@+id/Profile"
-        android:icon="@android:drawable/arrow_up_float"
-        app:showAsAction="always"
-        />
-    <item
-        android:title="Создать Объявление"
         android:id="@+id/addCarBtn"
-        android:icon="@android:drawable/arrow_up_float"
-        app:showAsAction="always"
-        />
+        android:icon="@drawable/circle_plus"
+        android:title="Создать Объявление"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/Profile"
+        android:icon="@drawable/circle_user"
+        android:title="Профиль"
+        app:showAsAction="always" />
+
 </menu>

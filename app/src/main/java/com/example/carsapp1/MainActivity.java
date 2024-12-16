@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+//        if (getIntent().getBooleanExtra("EXIT", false)) {
+//            finish();
+//        }
         if(SharedPrefManager.getInstance(this).isLoggedIn()){
             if(SharedPrefManager.getInstance(this).getRole()==1){
                 finish();
@@ -59,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
         progressDialog.setMessage("Please wait...");
         progressDialog.show();
-//        Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_LONG).show();
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
                 Constants.URL_LOGIN,
                 new Response.Listener<String>() {
@@ -73,8 +74,6 @@ public class MainActivity extends AppCompatActivity {
                                         jsonObject.getString("login"),
                                         jsonObject.getInt("role")
                                 );
-//                                progressDialog.setMessage(SharedPrefManager.getInstance(getApplicationContext()).toString());
-//                                progressDialog.dismiss();
                                 if(SharedPrefManager.getInstance(getApplicationContext()).getRole() == 2) {
                                     Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                                     startActivity(intent);
@@ -118,14 +117,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onLoginClick (View view){
         checklog();
-        //Intent intent = new Intent(MainActivity.this, BookActivity.class);
-        //startActivity(intent);
-        //startActivity(intent);
     }
 
     public void onRegClick (View view){
         Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-        //startActivity(intent);
         startActivity(intent);
+        finish();
     }
 }
