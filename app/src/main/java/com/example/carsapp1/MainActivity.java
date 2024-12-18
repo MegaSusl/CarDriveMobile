@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         final String login = editTextLogin.getText().toString().trim();
         final String pass = editTextPassword.getText().toString().trim();
 
-        progressDialog.setMessage("Please wait...");
+        progressDialog.setMessage("Пожалуйста подождите...");
         progressDialog.show();
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
                 Constants.URL_LOGIN,

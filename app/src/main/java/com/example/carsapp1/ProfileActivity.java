@@ -198,7 +198,7 @@ public class ProfileActivity extends AppCompatActivity {
                 // Отправляем данные в запросе POST
                 int id = SharedPrefManager.getInstance(getApplicationContext()).getUserID();
                 Map<String, String> params = new HashMap<>();
-                params.put("id", String.valueOf(id)); // Здесь должен быть id пользователя (например, можно передать через Intent)
+                params.put("id", String.valueOf(id));
                 params.put("pass_old", oldPassword);
                 params.put("pass_new", newPassword);
                 return params;

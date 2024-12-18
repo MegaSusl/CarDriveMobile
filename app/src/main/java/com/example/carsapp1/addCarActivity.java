@@ -90,7 +90,7 @@ public class addCarActivity extends AppCompatActivity {
         final String info = name + ";" + price + ";" + engine + ";";
 
         Log.d("AddCar", "Начало функции addCar");
-        progressDialog.setMessage("Please wait...");
+        progressDialog.setMessage("Пожалуйста подождите...");
         progressDialog.show();
         Log.d("AddCar", "Собрали данные: " + info);
 

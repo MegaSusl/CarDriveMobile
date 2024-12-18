@@ -62,15 +62,18 @@ public class DetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String carInfo = intent.getStringExtra("car_info");
         String carDetails = intent.getStringExtra("car_details");
+        String carEngine = intent.getStringExtra("car_engine");
         carId = intent.getIntExtra("car_id", 0);
         String phone = intent.getStringExtra("phone_number");
         loadImageForCar(carId, findViewById(R.id.card_detail_image));
         // Привязываем данные к элементам интерфейса
         TextView carInfoTextView = findViewById(R.id.card_detail_title);
         TextView carDetailsTextView = findViewById(R.id.card_detail_description);
+        TextView carPriceTextView = findViewById(R.id.card_detail_price);
 
-        carInfoTextView.setText(carInfo != null ? carInfo : "Информация отсутствует");
-        carDetailsTextView.setText(carDetails != null ? carDetails : "Детали отсутствуют");
+        carInfoTextView.setText(carInfo != null ? carInfo + "₽" : "Информация отсутствует");
+        carPriceTextView.setText(carDetails != null ? carDetails : "Описание отсутствует");
+        carDetailsTextView.setText(carDetails != null ? carEngine : "Данные по двигателю отсутствуют");
 
         Button callButton = findViewById(R.id.call_btn);
 
@@ -176,7 +179,7 @@ public class DetailActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             Log.e("AdminActivity", "Error parsing JSON: " + e.getMessage());
                             Log.e("AdminActivity", "Error parsing JSON: " + response);
-                            Toast.makeText(getApplicationContext(), "Error deleting item", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Ошибка удаления", Toast.LENGTH_LONG).show();
                         }
                     }
                 },

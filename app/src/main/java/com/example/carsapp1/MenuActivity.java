@@ -91,7 +91,7 @@ public class MenuActivity extends AppCompatActivity {
         ConstraintLayout carsContainer = findViewById(R.id.carsContainer);
         Context ctx = getApplicationContext();
         ArrayList<String> imagesBln = new ArrayList<String>();
-        progressDialog.setMessage("Please wait...");
+        progressDialog.setMessage("Пожалуйста подождите...");
         progressDialog.show();
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
                 Constants.URL_GET_CARS,
@@ -248,8 +248,9 @@ public class MenuActivity extends AppCompatActivity {
         innerLayout.addView(button);
         button.setOnClickListener(v -> {
             Intent intent = new Intent(this, DetailActivity.class);
-            intent.putExtra("car_info", info[0]); // Передаем информацию о машине
-            intent.putExtra("car_details", info[1]);
+            intent.putExtra("car_info", info[0]); // название
+            intent.putExtra("car_details", info[1]); // прайс
+            intent.putExtra("car_engine", info[2]); // мотор
             intent.putExtra("car_id", car_id);
             intent.putExtra("phone_number", phone);
             this.startActivity(intent);
